@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    background-color: rgb(123, 215, 243);
+}
+fieldset{
+    background: transparent;
+    width: 15vw;
+    height: 450px;
+    position: absolute;
+    align-items: center;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid  #fff;
+    box-sizing: border-box;
+    box-shadow: 0px 8px 16px 0px rgb(0, 0, 0, .5);
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+input{
+    background: transparent;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    outline: none;
+    border: 1px solid #f1f1;
+    border-radius: 10px;
+    height: 30px;
+    width: 25vw;
+    box-sizing: border-box;
+    box-shadow: 10px 8px 16px 10px rgba(0, 0, 0, 0.067);
+    text-align: center;
+    opacity: calc(100%-99.6%);
+    padding: 15px;
+    top: 90%;
+    bottom: 10%;
+    /* position: relative; */
+    z-index: -1;
+}
+#log{
+   width: 100px;
+   padding: 10px;
+   border-radius: 20px;
+   border: none;
+   font-size: 15px;
+   font-family: monospace;
+   font-weight: bolder;
+   left: 100px;
+   position: absolute;
+   text-align: center;
+   color: rgb(27, 10, 253);
+   cursor: pointer;
+   bottom: 20%;
+   position: absolute;
+   left: 35%;
+}
+#log:hover{
+    background-color: rgba(68, 68, 68, 0.507);
+    color: #fff;
+}
+
+#signup{
+    text-align: center;
+    left: 13%;
+    width: 75%;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px #f1f1;
+    letter-spacing: 2px;
+    top: 85%;
+    position: absolute;
+}
+#signup:hover{
+    background-color: transparent;
+    transform: scale(1.2);
+    transition-duration: .5s;
+}
+#signup a{
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    font-weight: lighter;
+}
+/* icon styling */
+i {
+    color: rgba(41, 20, 41, 0.466);
+}
+#i1{
+    position: absolute;
+    top: 9%;
+    left: 15%;
+}
+#i2{
+    position: absolute;
+    top: 20%;
+    left: 15%;
+}
+#i3{
+    position: absolute;
+    top: 32%;
+    left: 15%;
+}
+#i4{
+    position: absolute;
+    top: 43%;
+    left: 15%;
+    width: 10px;
+}
+#i5{
+    position: absolute;
+    top: 55%;
+    left: 15%;
+}
+/* }heading styling */
+h1{
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: goldenrod;
+}
+/* span styling */
+#form span{
+    font-size: small;
+    position: absolute;
+    color: red;
+    font-weight: lighter;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+#nameError{
+    position: absolute;
+    top: 37px;
+    right: 40px;
+}
+#nameError{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+}
+#telError{
+    position: absolute;
+    top: 90px;
+    right: 40px;
+}
+#emailError{
+    position: absolute;
+    top: 140px;
+    right: 40px;
+}
+#passwordError{
+    position: absolute;
+    top: 190px;
+    right: 40px;
+}
+#confError{
+    position: absolute;
+    top: 240px;
+    right: 40px;
+}
+.footer{
+    width: 1200px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.315);
+    position: absolute;
+    top: 90%;
+    margin-left: 90px;
+    bottom: 20vh;
+    text-align: center;
+    padding: 1%;
+}
+
+    </style>
+    <div id="form">
+        <h1>signUp to EMS</h1>
+        <fieldset>
+            <form action="log in">
+                <i class="fa-solid fa-user" id="i1"></i>
+                <input type="text" name="userbame" placeholder="username" id="name" required><br><br>
+                <span id="nameError"></span>
+                <i class="fa-solid fa-phone" id="i2"></i>
+                <input type="text" name="tel No" placeholder="tel No" id="name2" required><br><br>
+                <span id="telError"></span>
+                <i class="fa-solid fa-envelope" id="i3"></i>
+                <input type="email" name="email" placeholder="email" id="name3" required><br><br>         
+                <span id="emailError"></span>
+                <i class="fa-solid fa-lock" id="i4"></i>
+                <input type="password" name="password" placeholder="password" id="name4" required><br><br>
+                <span id="passwordError"></span>
+                <i class="fa-solid fa-check" id="i5"></i>
+                <input type="password" name="password" placeholder="confirm" id="name5" required><br><br>
+                <span id="confError"></span>
+                <button type="submit" id="signup" onclick="signUP()" ><a href="custlogin.html">submit</a></button>
+            </form>
+        </fieldset>
+    </div>
+    <div class="footer">
+        2023 Events Managemant system<sup>&reg</sup> 
+    </div>
+    <script>
+        var message1 = "submitted!!";
+var message2 = "Now you can Log in!";
+
+var time1 = setTimeout(Hello,1000)
+
+function Hello(){
+    alert(`sign up to EMS?`)
+}
+
+// clearTimeout(time1)
+
+function signUP(){
+    alert(`${message1} `)
+    alert(` Log in now?`)
+    return true
+    
+}
+
+// var nameError = document.getElementById('nameError')
+// var telError = document.getElementById('telError')
+// var emailError = document.getElementById('emailError')
+// var passwordError = document.getElementById('passError')
+// var confError = document.getElementById('confError')
+
+// function validateName(){
+//     var name = document.getElementById('name').value
+//     console.log(nameError);
+//     if(name.length == 0){
+//         nameError.innerHTML = "name is required";
+//         return false
+//     }
+//     if(!name.match(/^[A-Za-z]\*s{1}[A-Za-z]*$/)){
+//         nameError.innerHTML = "write fullname";
+//         return false
+//     }
+//     nameError.innerHTML = 'valid';
+//     return true
+// };
+    </script>
+</body>
+</html>
